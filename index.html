@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comfort Hotel</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar"><div class="container nav-wrap"><a class="brand" href="index.html">🏨 Comfort Hotel</a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="#rooms">Rooms</a></li><li><a href="booking.html">Booking</a></li><li><a href="#contact">Contact</a></li><li><a href="admin/login.html">Admin</a></li></ul></div></nav>
+<section class="hero"><div><h1>Comfort Hotel</h1><p>Luxury Rooms With Affordable Price</p><a href="#rooms" class="btn btn-warning">Book Your Room</a></div></section>
+<section class="section" id="rooms"><div class="container"><h2>Featured Rooms</h2><div id="roomGrid" class="grid"></div></div></section>
+<footer id="contact"><h3>🏨 Comfort Hotel</h3><p>Comfortable rooms • Affordable prices • Easy booking</p><p>© 2026 Comfort Hotel</p></footer>
+<script src="app.js"></script><script>
+const grid=document.getElementById("roomGrid");
+grid.innerHTML=getRooms().map(r=>`<div class="card room-card"><img src="images/${encodeURIComponent(r.image)}" alt="${esc(r.room_name)}"><div class="card-body"><h3>${esc(r.room_name)}</h3><p>⭐⭐⭐⭐⭐</p><p class="price">${money(r.price)} <span class="muted">/ night</span></p><p class="muted">${esc(r.room_type)} Room</p>${r.status==="Available"?`<a class="btn btn-primary" href="booking.html?room=${encodeURIComponent(r.room_name)}">Book Now</a>`:`<button class="btn btn-secondary" disabled>Booked</button>`}</div></div>`).join("");
+</script></body></html>
