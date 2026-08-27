@@ -10,7 +10,7 @@ Push the complete folder to a GitHub repository, then enable GitHub Pages from S
 
 ## Demo admin
 Username: `admin`
-Password: `admin123`
+Password: `P.......`
 
 ## Important
 This is a static demo. Room and booking data are stored in browser localStorage and the demo login uses sessionStorage. There is no real MySQL database or secure server-side authentication.
